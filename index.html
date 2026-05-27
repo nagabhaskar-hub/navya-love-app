@@ -3,20 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Navya ❤️</title>
+<title>Navya ❤️ Krish</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(to right,#ff758c,#ff7eb3);
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#2b001f,#7a004d,#ff4d88);
+color:white;
+overflow-x:hidden;
+}
+
+/* LOGIN */
+
+#loginPage{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
+}
+
+.login-box{
+background:rgba(255,255,255,0.1);
+padding:40px;
+border-radius:25px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px pink;
+width:350px;
+}
+
+.login-box h1{
+font-size:45px;
+margin-bottom:20px;
+color:#ff99cc;
+}
+
+.login-box input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-top:15px;
+font-size:18px;
+outline:none;
+}
+
+.login-box button{
+margin-top:20px;
+padding:14px 35px;
+border:none;
+border-radius:40px;
+background:#ff1493;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+/* MAIN APP */
+
+#mainApp{
+display:none;
+padding:20px;
+text-align:center;
 }
 
 /* HEARTS */
@@ -27,6 +82,7 @@ bottom:-20px;
 font-size:20px;
 color:red;
 animation:float 5s linear infinite;
+z-index:1;
 }
 
 @keyframes float{
@@ -43,36 +99,77 @@ opacity:0;
 
 }
 
-/* MAIN BOX */
+/* TITLE */
 
-.container{
-text-align:center;
-background:white;
-padding:40px;
-border-radius:25px;
-width:380px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-z-index:2;
+.title{
+font-size:65px;
+margin-top:20px;
+color:#ffb3d9;
+text-shadow:0 0 20px white;
 }
 
-h1{
-color:#ff4d6d;
-font-size:50px;
+/* PHOTOS */
+
+.photos{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:40px;
 }
 
-p{
-color:#444;
+.photos img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+box-shadow:0 0 25px pink;
+}
+
+.photos h2{
+margin-top:15px;
+font-size:35px;
+}
+
+/* CARD */
+
+.card{
+max-width:900px;
+margin:40px auto;
+padding:35px;
+background:rgba(255,255,255,0.08);
+border-radius:30px;
+box-shadow:0 0 25px rgba(255,255,255,0.2);
+line-height:2;
 font-size:24px;
-line-height:1.8;
 }
+
+/* COUNTDOWN */
+
+.count{
+font-size:32px;
+margin-top:20px;
+color:#ffe6f2;
+}
+
+/* NOTES */
+
+.notes{
+margin-top:20px;
+font-size:26px;
+color:#ffd6eb;
+}
+
+/* BUTTONS */
 
 button{
-padding:14px 30px;
+padding:15px 40px;
+font-size:28px;
 border:none;
-border-radius:40px;
-margin:15px;
-font-size:22px;
+border-radius:50px;
 cursor:pointer;
+margin:20px;
 transition:0.3s;
 }
 
@@ -81,20 +178,61 @@ transform:scale(1.1);
 }
 
 .yes{
-background:#ff4d6d;
+background:#ff1493;
 color:white;
 }
 
 .no{
-background:#444;
+background:black;
 color:white;
 }
 
-#result{
-margin-top:20px;
-font-size:24px;
-color:#ff4d6d;
-font-weight:bold;
+/* GALLERY */
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.gallery img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 0 20px pink;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.title{
+font-size:45px;
+}
+
+.photos img{
+width:160px;
+height:160px;
+}
+
+.card{
+font-size:20px;
+padding:25px;
+}
+
+.gallery img{
+width:160px;
+height:160px;
+}
+
+button{
+font-size:22px;
+padding:12px 28px;
+}
+
 }
 
 </style>
@@ -103,19 +241,126 @@ font-weight:bold;
 
 <body>
 
-<div class="container">
+<!-- LOGIN -->
+
+<div id="loginPage">
+
+<div class="login-box">
 
 <h1>Navya ❤️</h1>
 
-<p>
+<p>Enter Secret Password 🔐</p>
 
-Krish loves you endlessly 💖<br><br>
+<input type="password" id="password" placeholder="Enter Password">
 
-Every moment with you feels special ✨<br><br>
+<button onclick="checkPassword()">
+Open Love App ❤️
+</button>
 
-Will you accept my love...? ❤️
+</div>
 
-</p>
+</div>
+
+<!-- MAIN APP -->
+
+<div id="mainApp">
+
+<h1 class="title">Navya ❤️ Krish</h1>
+
+<!-- MUSIC -->
+
+<audio autoplay loop controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<!-- PHOTOS -->
+
+<div class="photos">
+
+<div>
+<img src="krish.jpg.jpeg">
+<h2>Krish 💖</h2>
+</div>
+
+<div>
+<img src="Navya.jpg">
+<h2>Navya 💖</h2>
+</div>
+
+</div>
+
+<!-- LOVE JOURNEY -->
+
+<div class="card">
+
+<h2>💞 Our Beautiful Journey 💞</h2><br>
+
+🎂 Navya Birthday :
+<b>May 11</b><br><br>
+
+🎂 Krish Birthday :
+<b>May 12</b><br><br>
+
+💖 First Introduction :
+<b>January 03 2025</b><br><br>
+
+❤️ Re-Friendship Day :
+<b>March 02 2026</b><br><br>
+
+✨ Every moment with you is special Navya ❤️
+
+</div>
+
+<!-- LOVE TIMER -->
+
+<div class="card">
+
+<h2>⏳ Love Timer ❤️</h2>
+
+<div class="count" id="loveTimer"></div>
+
+</div>
+
+<!-- BIRTHDAY COUNTDOWN -->
+
+<div class="card">
+
+<h2>🎂 Birthday Countdown 🎂</h2>
+
+<div class="count" id="birthdayCountdown"></div>
+
+</div>
+
+<!-- DAILY LOVE NOTES -->
+
+<div class="card">
+
+<h2>💌 Daily Love Note 💌</h2>
+
+<div class="notes" id="dailyNote"></div>
+
+</div>
+
+<!-- PHOTO GALLERY -->
+
+<div class="card">
+
+<h2>📸 Our Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="krish.jpg.jpeg">
+<img src="Navya.jpg">
+
+</div>
+
+</div>
+
+<!-- LOVE QUESTION -->
+
+<div class="card">
+
+<h2>Will You Stay With Me Forever...? ❤️</h2>
 
 <button class="yes" onclick="yesLove()">
 Yes ❤️
@@ -125,11 +370,86 @@ Yes ❤️
 No 💔
 </button>
 
-<div id="result"></div>
+</div>
 
 </div>
 
 <script>
+
+/* PASSWORD */
+
+function checkPassword(){
+
+const pass=document.getElementById("password").value;
+
+if(pass==="navya123"){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("mainApp").style.display="block";
+
+}else{
+
+alert("Wrong Password 💔");
+
+}
+
+}
+
+/* LOVE TIMER */
+
+const startDate = new Date("2025-01-03");
+
+const today = new Date();
+
+const diffTime = today - startDate;
+
+const days = Math.floor(diffTime / (1000*60*60*24));
+
+document.getElementById("loveTimer").innerHTML =
+"We know each other for " + days + " days ❤️";
+
+/* BIRTHDAY COUNTDOWN */
+
+const now = new Date();
+
+let nextBirthday = new Date(now.getFullYear(),4,11);
+
+if(now > nextBirthday){
+
+nextBirthday = new Date(now.getFullYear()+1,4,11);
+
+}
+
+const birthdayDiff =
+Math.ceil((nextBirthday-now)/(1000*60*60*24));
+
+document.getElementById("birthdayCountdown").innerHTML =
+"Navya Birthday in " + birthdayDiff + " days 🎂❤️";
+
+/* DAILY NOTES */
+
+const notes = [
+
+"Every heartbeat reminds me of you ❤️",
+
+"Life became beautiful after you ✨",
+
+"You are my peace and happiness 💖",
+
+"I Love You More Everyday ❤️",
+
+"Your smile is my favorite view 🌸",
+
+"You are my forever feeling 💞"
+
+];
+
+const randomNote =
+notes[Math.floor(Math.random()*notes.length)];
+
+document.getElementById("dailyNote").innerHTML =
+randomNote;
 
 /* YES BUTTON */
 
@@ -148,28 +468,12 @@ yesWindow.document.write(`
 <style>
 
 body{
-margin:0;
-padding:40px;
 background:linear-gradient(135deg,#1a001a,#660033,#99004d);
-font-family:'Segoe UI',sans-serif;
 color:white;
+font-family:'Segoe UI';
+padding:40px;
 line-height:2;
 font-size:30px;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px;
-background:rgba(255,255,255,0.08);
-border-radius:30px;
-box-shadow:0 0 30px pink;
-}
-
-h1{
-text-align:center;
-font-size:70px;
-color:#ff99cc;
 }
 
 </style>
@@ -178,36 +482,11 @@ color:#ff99cc;
 
 <body>
 
-<div class="container">
-
 <h1>Navya ❤️</h1>
 
-నా జీవితంలోకి వచ్చిన  
-అత్యంత అందమైన feeling నువ్వే ❤️<br><br>
+Thank You For Accepting My Love 🥹❤️<br><br>
 
-నిన్ను చూసిన ప్రతిసారి  
-నా heart కొత్తగా beat అవుతుంది 💖<br><br>
-
-నీ smile చూస్తే  
-నా ప్రపంచం మొత్తం beautiful గా మారిపోతుంది ✨<br><br>
-
-నువ్వు నా life లోకి వచ్చిన తర్వాత  
-ప్రతి రోజు special అయింది 🌸<br><br>
-
-నాకు life లో పెద్ద dreams ఏమీ లేవు...  
-కానీ నీతో కలిసి life మొత్తం ఉండాలని ఒక్క కోరిక ఉంది 💍❤️<br><br>
-
-నీ బాధలో నీ shadowలా...  
-నీ happiness లో నీ smileలా ఉండాలని ఉంది 💞<br><br>
-
-ప్రతి జన్మలో కూడా  
-నా heart నిన్నే ప్రేమిస్తుంది Navya ❤️<br><br>
-
-Thank You So Much For Accepting My Love 🥹💖<br><br>
-
-I Love You Forever Navya ❤️
-
-</div>
+I Promise To Love You Forever 💖
 
 </body>
 
@@ -234,28 +513,12 @@ noWindow.document.write(`
 <style>
 
 body{
-margin:0;
-padding:40px;
-background:linear-gradient(135deg,#000000,#330000,#660000);
-font-family:'Segoe UI',sans-serif;
+background:black;
 color:white;
+font-family:'Segoe UI';
+padding:40px;
 line-height:2;
 font-size:30px;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px;
-background:rgba(255,255,255,0.08);
-border-radius:30px;
-box-shadow:0 0 30px red;
-}
-
-h1{
-text-align:center;
-font-size:70px;
-color:red;
 }
 
 </style>
@@ -264,32 +527,10 @@ color:red;
 
 <body>
 
-<div class="container">
-
 <h1>Navya 💔</h1>
 
-నువ్వు No చెప్పినా కూడా  
-నా ప్రేమ మాత్రం ఎప్పటికీ మారదు ❤️<br><br>
-
-ఎందుకంటే నిన్ను ప్రేమించడం  
-నా అలవాటు కాదు...  
-నా ప్రాణం 💔<br><br>
-
-నిన్ను చూసిన రోజు నుంచి  
-నా heart నిన్నే ప్రేమిస్తోంది 💖<br><br>
-
-నువ్వు నా life లో లేకపోయినా  
-నా prayers లో మాత్రం ఎప్పుడూ ఉంటావు ✨<br><br>
-
-నీ happiness కోసం  
-దూరం నుంచైనా pray చేస్తాను ❤️<br><br>
-
-Maybe నేను నీ destiny కాకపోవచ్చు...  
-కానీ నువ్వు మాత్రం నా forever feeling 💔<br><br>
-
-I Will Always Love You Navya ❤️
-
-</div>
+Even if you say no...  
+My love for you never changes ❤️
 
 </body>
 
@@ -299,7 +540,7 @@ I Will Always Love You Navya ❤️
 
 }
 
-/* FLOATING HEARTS */
+/* HEARTS */
 
 function createHeart(){
 
