@@ -390,7 +390,7 @@ Forever grateful to have you in my life 💞
 
 <img src="birthday3.jpg.jpg">
 
-<img src="restaurant2.jpg.jpg">
+<img src="restaurant2.jpg">
 
 <img src="restaurant3.jpeg.jpg">
 
@@ -567,6 +567,20 @@ heart.remove();
 }
 
 setInterval(createHeart,300);
+
+/* SERVICE WORKER */
+
+if ('serviceWorker' in navigator) {
+
+navigator.serviceWorker.register('sw.js')
+
+.then(function() {
+
+console.log("Service Worker Registered");
+
+});
+
+}
 
 </script>
 
