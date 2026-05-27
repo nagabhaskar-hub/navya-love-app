@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Navya ❤️ Krish</title>
+
+<link rel="manifest" href="manifest.json">
 
 <style>
 
@@ -27,6 +31,7 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:20px;
 }
 
 .login-box{
@@ -36,7 +41,8 @@ border-radius:25px;
 text-align:center;
 backdrop-filter:blur(10px);
 box-shadow:0 0 25px pink;
-width:350px;
+width:100%;
+max-width:400px;
 }
 
 .login-box h1{
@@ -102,7 +108,7 @@ opacity:0;
 /* TITLE */
 
 .title{
-font-size:65px;
+font-size:60px;
 margin-top:20px;
 color:#ffb3d9;
 text-shadow:0 0 20px white;
@@ -113,7 +119,7 @@ text-shadow:0 0 20px white;
 .photos{
 display:flex;
 justify-content:center;
-gap:40px;
+gap:30px;
 flex-wrap:wrap;
 margin-top:40px;
 }
@@ -148,7 +154,7 @@ font-size:24px;
 /* COUNTDOWN */
 
 .count{
-font-size:32px;
+font-size:30px;
 margin-top:20px;
 color:#ffe6f2;
 }
@@ -157,7 +163,7 @@ color:#ffe6f2;
 
 .notes{
 margin-top:20px;
-font-size:26px;
+font-size:24px;
 color:#ffd6eb;
 }
 
@@ -211,28 +217,32 @@ box-shadow:0 0 20px pink;
 @media(max-width:768px){
 
 .title{
-font-size:45px;
+font-size:40px;
 }
 
 .photos img{
-width:160px;
-height:160px;
+width:150px;
+height:150px;
+}
+
+.photos h2{
+font-size:28px;
 }
 
 .card{
-font-size:20px;
-padding:25px;
+font-size:18px;
+padding:20px;
 }
 
 .gallery img,
 .gallery video{
-width:160px;
-height:160px;
+width:150px;
+height:150px;
 }
 
 button{
-font-size:22px;
-padding:12px 28px;
+font-size:20px;
+padding:12px 25px;
 }
 
 }
@@ -253,7 +263,8 @@ padding:12px 28px;
 
 <p>Enter Secret Password 🔐</p>
 
-<input type="password" id="password" placeholder="Enter Password">
+<input type="password" id="password"
+placeholder="Enter Password">
 
 <button onclick="checkPassword()">
 Open Love App ❤️
@@ -423,13 +434,16 @@ No 💔
 
 function checkPassword(){
 
-const pass=document.getElementById("password").value;
+const pass =
+document.getElementById("password").value;
 
 if(pass==="navya123"){
 
-document.getElementById("loginPage").style.display="none";
+document.getElementById("loginPage")
+.style.display="none";
 
-document.getElementById("mainApp").style.display="block";
+document.getElementById("mainApp")
+.style.display="block";
 
 }else{
 
@@ -447,28 +461,41 @@ const today = new Date();
 
 const diffTime = today - startDate;
 
-const days = Math.floor(diffTime / (1000*60*60*24));
+const days = Math.floor(
+diffTime / (1000*60*60*24)
+);
 
-document.getElementById("loveTimer").innerHTML =
-"We know each other for " + days + " beautiful days ❤️";
+document.getElementById("loveTimer")
+.innerHTML =
+"We know each other for "
++ days +
+" beautiful days ❤️";
 
 /* BIRTHDAY COUNTDOWN */
 
 const now = new Date();
 
-let nextBirthday = new Date(now.getFullYear(),4,11);
+let nextBirthday =
+new Date(now.getFullYear(),4,11);
 
 if(now > nextBirthday){
 
-nextBirthday = new Date(now.getFullYear()+1,4,11);
+nextBirthday =
+new Date(now.getFullYear()+1,4,11);
 
 }
 
 const birthdayDiff =
-Math.ceil((nextBirthday-now)/(1000*60*60*24));
+Math.ceil(
+(nextBirthday-now)/(1000*60*60*24)
+);
 
-document.getElementById("birthdayCountdown").innerHTML =
-"Navya Birthday in " + birthdayDiff + " days 🎂❤️";
+document.getElementById(
+"birthdayCountdown"
+).innerHTML =
+"Navya Birthday in "
++ birthdayDiff +
+" days 🎂❤️";
 
 /* DAILY LOVE NOTES */
 
@@ -489,21 +516,21 @@ const notes = [
 ];
 
 const randomNote =
-notes[Math.floor(Math.random()*notes.length)];
+notes[Math.floor(
+Math.random()*notes.length
+)];
 
-document.getElementById("dailyNote").innerHTML =
-randomNote;
+document.getElementById(
+"dailyNote"
+).innerHTML = randomNote;
 
 /* YES BUTTON */
 
 function yesLove(){
 
-window.open(
-"https://nagabhaskar-hub.github.io/navya-love-app/",
-"_blank"
+alert(
+"I Love You Forever Navya ❤️"
 );
-
-alert("I Love You Forever Navya ❤️");
 
 }
 
@@ -511,12 +538,9 @@ alert("I Love You Forever Navya ❤️");
 
 function noLove(){
 
-window.open(
-"https://nagabhaskar-hub.github.io/navya-love-app/",
-"_blank"
+alert(
+"Even if you say no... I still love you forever ❤️"
 );
-
-alert("Even if you say no... I still love you forever ❤️");
 
 }
 
@@ -524,13 +548,15 @@ alert("Even if you say no... I still love you forever ❤️");
 
 function createHeart(){
 
-const heart=document.createElement("div");
+const heart =
+document.createElement("div");
 
 heart.classList.add("heart");
 
 heart.innerHTML="❤️";
 
-heart.style.left=Math.random()*100+"vw";
+heart.style.left =
+Math.random()*100+"vw";
 
 document.body.appendChild(heart);
 
