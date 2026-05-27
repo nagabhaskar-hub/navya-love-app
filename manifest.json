@@ -1,6 +1,6 @@
 {
   "name": "Navya Love App",
-  "short_name": "Navya ❤️",
+  "short_name": "Navya",
   "start_url": "/navya-love-app/",
   "display": "standalone",
   "background_color": "#ff4d88",
@@ -11,6 +11,11 @@
     {
       "src": "icon.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
