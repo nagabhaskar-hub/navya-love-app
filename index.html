@@ -74,7 +74,7 @@ padding:20px;
 text-align:center;
 }
 
-/* HEARTS */
+/* FLOATING HEARTS */
 
 .heart{
 position:fixed;
@@ -135,7 +135,7 @@ font-size:35px;
 /* CARD */
 
 .card{
-max-width:900px;
+max-width:1000px;
 margin:40px auto;
 padding:35px;
 background:rgba(255,255,255,0.08);
@@ -197,7 +197,8 @@ flex-wrap:wrap;
 margin-top:30px;
 }
 
-.gallery img{
+.gallery img,
+.gallery video{
 width:250px;
 height:250px;
 object-fit:cover;
@@ -223,7 +224,8 @@ font-size:20px;
 padding:25px;
 }
 
-.gallery img{
+.gallery img,
+.gallery video{
 width:160px;
 height:160px;
 }
@@ -241,7 +243,7 @@ padding:12px 28px;
 
 <body>
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 
 <div id="loginPage">
 
@@ -270,10 +272,12 @@ Open Love App ❤️
 <!-- MUSIC -->
 
 <audio autoplay loop controls>
+
 <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+
 </audio>
 
-<!-- PHOTOS -->
+<!-- MAIN PHOTOS -->
 
 <div class="photos">
 
@@ -331,7 +335,7 @@ Open Love App ❤️
 
 </div>
 
-<!-- DAILY LOVE NOTES -->
+<!-- DAILY LOVE NOTE -->
 
 <div class="card">
 
@@ -341,16 +345,48 @@ Open Love App ❤️
 
 </div>
 
-<!-- PHOTO GALLERY -->
+<!-- DAILY UPDATES -->
 
 <div class="card">
 
-<h2>📸 Our Memories 📸</h2>
+<h2>📅 Daily Love Updates ❤️</h2>
+
+<div class="notes">
+
+💖 Today we spent beautiful time together ✨<br><br>
+
+Your smile made my whole day special ❤️<br><br>
+
+Forever grateful to have you in my life 💞
+
+</div>
+
+</div>
+
+<!-- PHOTO & VIDEO GALLERY -->
+
+<div class="card">
+
+<h2>📸 Birthday & Memory Gallery 📸</h2>
 
 <div class="gallery">
 
-<img src="krish.jpg.jpeg">
-<img src="Navya.jpg">
+<img src="Birthday 1.jpg">
+<img src="Birthday 2.jpg">
+<img src="Birthday 3.jpg">
+<img src="Birthday.jpg">
+
+<img src="resurant jismat4.jpg">
+<img src="resurant jismat5.jpg">
+<img src="resurant jismat6.jpeg">
+
+<video controls>
+<source src="Birthday 1.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="Birthday .mp4" type="video/mp4">
+</video>
 
 </div>
 
@@ -407,7 +443,7 @@ const diffTime = today - startDate;
 const days = Math.floor(diffTime / (1000*60*60*24));
 
 document.getElementById("loveTimer").innerHTML =
-"We know each other for " + days + " days ❤️";
+"We know each other for " + days + " beautiful days ❤️";
 
 /* BIRTHDAY COUNTDOWN */
 
@@ -427,7 +463,7 @@ Math.ceil((nextBirthday-now)/(1000*60*60*24));
 document.getElementById("birthdayCountdown").innerHTML =
 "Navya Birthday in " + birthdayDiff + " days 🎂❤️";
 
-/* DAILY NOTES */
+/* DAILY LOVE NOTES */
 
 const notes = [
 
@@ -540,7 +576,7 @@ My love for you never changes ❤️
 
 }
 
-/* HEARTS */
+/* FLOATING HEARTS */
 
 function createHeart(){
 
